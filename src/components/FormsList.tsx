@@ -22,7 +22,6 @@ function FormsList() {
   };
 
   const onFormModalconfirm = (formData: FormValues) => {
-    console.log('omg', formData);
     if (formData?.id) {
       FormService.updateForm(formData.id, formData as FormProps);
     } else if (formData) {
@@ -62,7 +61,7 @@ function FormsList() {
         </div>
       </Container>
       {!forms.length && (
-        <div>No forms. Create one!</div>
+        <Container>No forms. Create one!</Container>
       )}
       {forms.map((form) => (
         <Card key={form.id} className="mb-3">

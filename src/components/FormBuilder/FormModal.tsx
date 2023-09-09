@@ -37,7 +37,7 @@ const FormModal: FC<FormModalProps> = ({
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     const localData = { ...formData, ...data };
-    console.log('data: ', data);
+    console.log('data: ', data, localData);
     onConfirm(localData);
     setShow(false);
   };
