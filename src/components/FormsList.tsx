@@ -11,7 +11,8 @@ function FormsList() {
   const [isOpenFormModal, setIsOpenFormModal] = useState(false);
   const [formToEdit, setFormToEdit] = useState<FormProps | undefined>();
 
-  const addForm = () => {
+  const openAddForm = (e: React.MouseEvent) => {
+    e.preventDefault();
     setFormToEdit(undefined);
     setIsOpenFormModal(true);
   };
@@ -55,13 +56,17 @@ function FormsList() {
       <Container>
         <div className="d-flex justify-content-between align-items-center">
           <h1 className="page-title">Forms</h1>
-          <Button className="me-1" onClick={addForm}>
+          <Button className="me-1" onClick={openAddForm}>
             <PlusCircle size={20} />
           </Button>
         </div>
       </Container>
       {!forms.length && (
-        <Container>No forms. Create one!</Container>
+        <Container>
+          <p>
+            No forms. <a href="#" onClick={openAddForm}>Create one!</a>
+          </p>
+        </Container>
       )}
       {forms.map((form) => (
         <Card key={form.id} className="mb-3">
