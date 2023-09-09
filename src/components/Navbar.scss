@@ -1,0 +1,13 @@
+.app-navbar {
+  font-size: 1.8em;
+  .logo {
+    width: 60px;
+  }
+  .nav-link {
+    color: #1bc2f0;
+    &.active {
+      color: #07a7d4;
+      text-decoration: overline;
+    }
+  }
+}
